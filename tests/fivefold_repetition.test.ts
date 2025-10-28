@@ -1,11 +1,11 @@
 import { describe, expect, test } from "@jest/globals";
-import { ChessterGame } from "../src/game";
+import { Chesster } from "../src/index";
 
 // todo: create fen string import tests
 
 describe("automatic draw by fivefold repetition", () => {
     test("knight repetition only", () => {
-        const game = new ChessterGame();
+        const game = new Chesster();
         expect(game.isDraw).toBe(false);
 
         // note: first time position occured (starting position)
@@ -54,7 +54,7 @@ describe("automatic draw by fivefold repetition", () => {
     });
 
     test("queen and bishop repetition with setup", () => {
-        const game = new ChessterGame();
+        const game = new Chesster();
         expect(game.isDraw).toBe(false);
 
         ///////////
@@ -117,7 +117,7 @@ describe("automatic draw by fivefold repetition", () => {
     });
 
     test("knight repetition with setup", () => {
-        const game = new ChessterGame();
+        const game = new Chesster();
         expect(game.isDraw).toBe(false);
 
         ///////////
@@ -184,7 +184,7 @@ describe("automatic draw by fivefold repetition", () => {
     });
 
     test("interrupted knight repetition with setup", () => {
-        const game = new ChessterGame();
+        const game = new Chesster();
         expect(game.isDraw).toBe(false);
 
         ///////////
@@ -298,7 +298,7 @@ describe("automatic draw by fivefold repetition", () => {
     });
 
     test("interrupted repetition by castling rights", () => {
-        const game = new ChessterGame();
+        const game = new Chesster();
 
         ///////////
         // SETUP //

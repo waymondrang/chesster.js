@@ -1,20 +1,21 @@
 import { describe, expect, test } from "@jest/globals";
-import { fenToBoard } from "../src/util";
-import {
-    BLACK_PAWN,
-    WHITE_PAWN,
-    BLACK_KNIGHT,
-    WHITE_KNIGHT,
+import { fenToBoard, pieces } from "../src/index";
+
+const {
     BLACK_ROOK,
-    WHITE_ROOK,
+    BLACK_KNIGHT,
     BLACK_BISHOP,
-    WHITE_BISHOP,
     BLACK_QUEEN,
-    WHITE_QUEEN,
     BLACK_KING,
+    BLACK_PAWN,
+    WHITE_ROOK,
+    WHITE_KNIGHT,
+    WHITE_BISHOP,
+    WHITE_QUEEN,
     WHITE_KING,
+    WHITE_PAWN,
     EMPTY_CELL,
-} from "../src/const";
+} = pieces;
 
 describe("basic fentoboard() testing", () => {
     test("converts standard starting position", () => {
@@ -23,7 +24,7 @@ describe("basic fentoboard() testing", () => {
 
         expect(board.length).toBe(64);
 
-        // check ranks!
+        // check ranks
         expect(board[0]).toBe(BLACK_ROOK);
         expect(board[1]).toBe(BLACK_KNIGHT);
         expect(board[2]).toBe(BLACK_BISHOP);

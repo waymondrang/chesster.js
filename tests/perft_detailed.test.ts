@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { ChessterGame } from "../src/game";
+import { Chesster } from "../src/index";
 
 /**
  * detailed perft (performance test) for chess engine correctness validation
@@ -81,7 +81,7 @@ interface PerftDetailedResults {
 }
 
 function perft(
-    game: ChessterGame,
+    game: Chesster,
     depth: number,
     result: PerftDetailedResults
 ): void {
@@ -136,7 +136,7 @@ describe(`detailed move generation (perft) testing (max depth: ${MAX_DEPTH})`, (
 
         describe(`depth ${depth}`, () => {
             beforeAll(() => {
-                const game = new ChessterGame();
+                const game = new Chesster();
                 perft(game, depth, result);
             });
 

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { ChessterGame } from "../src/game";
+import { Chesster } from "../src/index";
 
 /**
  * simple perft (performance test) for chess engine correctness validation
@@ -30,7 +30,7 @@ const EXPECTED_PERFT_VALUES: Record<number, number> = {
  * @param depth - depth to simulate to
  * @returns total number of positions at given depth
  */
-function perft(game: ChessterGame, depth: number): number {
+function perft(game: Chesster, depth: number): number {
     if (depth === 0) return 1;
 
     const moves = game.moves();
@@ -60,7 +60,7 @@ describe(`simple move generation (perft) testing (max depth: ${MAX_DEPTH})`, () 
         test(`depth ${depth} should generate ${EXPECTED_PERFT_VALUES[
             depth
         ].toString()} positions`, () => {
-            const game = new ChessterGame();
+            const game = new Chesster();
             const positions = perft(game, depth);
             expect(positions).toBe(expected);
         });
