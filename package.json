@@ -4,7 +4,6 @@
     "description": "A high-performance chess library written in TypeScript.",
     "keywords": [
         "chess",
-        "chess-engine",
         "typescript"
     ],
     "license": "ISC",
@@ -34,7 +33,6 @@
     "devDependencies": {
         "@jest/globals": "^30.2.0",
         "@types/jest": "^30.0.0",
-        "chess.js": "^1.4.0",
         "jest": "^30.2.0",
         "prettier": "^3.6.2",
         "ts-jest": "^29.4.5",
