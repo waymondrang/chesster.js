@@ -1,23 +1,35 @@
 {
     "name": "chesster.js",
     "version": "0.0.1",
-    "description": "A high-performance chess engine and utility written in TypeScript.",
+    "description": "A high-performance chess library written in TypeScript.",
     "keywords": [
         "chess",
         "chess-engine",
         "typescript"
     ],
     "license": "ISC",
-    "author": "",
+    "author": {
+        "name": "Raymond Wang",
+        "email": "me@waymondrang.com",
+        "url": "https://waymondrang.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/waymondrang/chesster.js.git"
+    },
     "type": "module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
     "scripts": {
         "format:check": "prettier --check .",
         "format:fix": "prettier --write .",
         "check": "npm run format:check",
         "build": "tsc",
-        "test": "jest"
+        "test": "jest",
+        "prepack": "npm run build"
     },
     "devDependencies": {
         "@jest/globals": "^30.2.0",

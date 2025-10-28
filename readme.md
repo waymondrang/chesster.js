@@ -1,6 +1,6 @@
 # chesster.js
 
-A high-performance chess engine and utility written in TypeScript.
+A high-performance chess library written in TypeScript.
 
 ## Features
 
@@ -19,7 +19,7 @@ A high-performance chess engine and utility written in TypeScript.
 ## Installation
 
 ```bash
-npm install chessterjs
+npm install chesster.js
 ```
 
 ## License
