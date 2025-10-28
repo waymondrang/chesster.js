@@ -6,7 +6,7 @@ name: build and publish npm package
 on:
     release:
         types: [published]
-    worflow_dispatch:
+    workflow_dispatch:
 
 jobs:
     build:
