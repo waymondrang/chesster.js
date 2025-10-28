@@ -26,6 +26,7 @@
         "format:check": "prettier --check .",
         "format:fix": "prettier --write .",
         "check": "npm run format:check",
+        "fix": "npm run format:fix",
         "build": "tsc",
         "test": "jest",
         "prepack": "npm run build"
