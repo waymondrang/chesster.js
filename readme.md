@@ -1,26 +1,51 @@
 # chesster.js
 
-A high-performance chess library written in TypeScript.
+![NPM Version](https://img.shields.io/npm/v/chesster.js)
+
+A TypeScript chess library focused on performance and accuracy.
 
 ## Features
 
-**Performant** - Optimized with bit-manipulation for fast move generation and validation.
-
-**Standard Chess Rules** - All standard chess rules including castling, en passant, and promotion.
-
-**Fivefold Repetition** - Detects whether a position has occured five times and automatically draws the game.
-
-**Undo Turns** - Full move history with the ability to undo any number of turns.
-
-**Type Safe** - Written in TypeScript with full type definitions.
-
-**Simple API** - Easy-to-use interface with chess notation (FEN) support
+- Fast move generation using bit-manipulation
+- Full chess rules (castling, en passant, promotion)
+- Fivefold repetition stalemate draw
+- Move history and undo
+- FEN string import
+- Check, checkmate, and stalemate detection
 
 ## Installation
 
 ```bash
 npm install chesster.js
 ```
+
+## Usage
+
+```typescript
+import { Chesster } from "chesster.js";
+
+// Create a new game
+const game = new Chesster();
+
+// Get all legal moves
+const moves = game.moves();
+
+// Make a move
+game.move(moves[0]);
+
+// Undo a move
+game.undo();
+
+// Check if game is over
+if (game.isGameOver()) {
+    console.log("gg");
+}
+```
+
+## Planned features
+
+- FEN string export
+- _MORE PERFORMANCE!_
 
 ## License
 
