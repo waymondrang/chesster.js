@@ -1,5 +1,5 @@
 /**
- * chesster.js, a high-performance chess engine written in typescript
+ * chesster.js, a typescript chess library focused on performance and accuracy.
  * @packageDocumentation
  */
 
@@ -44,13 +44,13 @@ import {
 // ENGINE //
 ////////////
 
-export { ChessterGame as Chesster } from "./game";
+export { Game as Chesster } from "./game";
 
 ///////////
 // TYPES //
 ///////////
 
-export type { GameStateType as ChessterGameState } from "./types";
+export type { GameStateType as ChessterState } from "./types";
 export type { PlayerType as Player } from "./types";
 
 ///////////////
@@ -81,7 +81,7 @@ export {
 // PIECES //
 ////////////
 
-export const PIECES = {
+export const pieces = {
     EMPTY_CELL,
     PAWN,
     WHITE_PAWN,
@@ -107,7 +107,7 @@ export const PIECES = {
 // MOVE TYPES //
 ////////////////
 
-export const MOVE_TYPES = {
+export const moveTypes = {
     MOVE,
     CASTLE_KINGSIDE,
     CASTLE_QUEENSIDE,

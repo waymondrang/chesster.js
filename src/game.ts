@@ -47,10 +47,13 @@ import {
 
 class Game implements GameStateType {
     board: number[];
+
     white: PlayerType;
     black: PlayerType;
+
     isStalemate: boolean;
     isDraw: boolean;
+
     turn: TurnType;
     turnHistory: number[];
 
@@ -2245,4 +2248,4 @@ class Game implements GameStateType {
     }
 }
 
-export { Game as ChessterGame };
+export { Game as Game };
