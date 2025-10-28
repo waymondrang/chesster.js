@@ -1,6 +1,6 @@
 {
     "name": "chesster.js",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A TypeScript chess library focused on performance and accuracy.",
     "keywords": [
         "chess",
