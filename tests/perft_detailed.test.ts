@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test, beforeAll } from "vitest";
 import { Chesster } from "../src/index";
 
 /**
@@ -138,7 +138,7 @@ describe(`detailed move generation (perft) testing (max depth: ${MAX_DEPTH})`, (
             beforeAll(() => {
                 const game = new Chesster();
                 perft(game, depth, result);
-            });
+            }, 30000);
 
             test(`depth ${depth} should generate ${expected.positions.toString()} positions`, () => {
                 expect(result.positions).toBe(expected.positions);

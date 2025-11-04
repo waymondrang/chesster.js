@@ -30,20 +30,20 @@ import {
     PROMOTION_ROOK,
     PROMOTION_ROOK_CAPTURE,
     DEFAULT_BOARD,
-} from "./const";
+} from "./const.js";
 import type {
     GameStateType,
     PlayerType,
     TurnType,
     RecursivePartial,
-} from "./types";
+} from "./types.js";
 import {
     generateZobristKeys,
     getMoveType,
     numberToBinaryString,
     getPieceType,
     numberToPieceString,
-} from "./util";
+} from "./util.js";
 
 class Game implements GameStateType {
     board: number[];
@@ -74,7 +74,7 @@ class Game implements GameStateType {
     // Piece positions use indices 0-767 (64 squares * 12 possible piece types)
     // The remaining indices are used for game state flags
     static readonly #PIECES_PER_SQUARE = 12;
-    static readonly #TOTAL_PIECE_INDICES = BOARD_SIZE * Game.#PIECES_PER_SQUARE;
+    static readonly #TOTAL_PIECE_INDICES = BOARD_SIZE * 12; // Using literal instead of Game.#PIECES_PER_SQUARE
     static readonly #MIN_PIECE_VALUE = 2;
 
     #blackToMoveZobristIndex = Game.#TOTAL_PIECE_INDICES;
@@ -583,6 +583,19 @@ class Game implements GameStateType {
                     this.zobristKeys[
                         ((move >>> 8) & 0b111) + this.#enPassantFileZobristIndex
                     ]!;
+
+                // perform normal move updates as well (avoid fallthrough)
+                this.currentZobrist ^=
+                    this.zobristKeys[
+                        ((move >>> 14) & 0b111111) * 12 + ((move & 0b1111) - 2)
+                    ]! ^
+                    this.zobristKeys[
+                        ((move >>> 8) & 0b111111) * 12 + ((move & 0b1111) - 2)
+                    ]!;
+
+                this.board[(move >>> 14) & 0b111111] = 0;
+                this.board[(move >>> 8) & 0b111111] = move & 0b1111;
+                break;
             case MOVE:
                 this.currentZobrist ^=
                     this.zobristKeys[
@@ -644,7 +657,7 @@ class Game implements GameStateType {
      */
     queryMove(move: number): boolean {
         // 32 bit number
-        let board = [...this.board];
+        const board = [...this.board];
 
         switch (getMoveType(move)) {
             case CAPTURE:
@@ -913,7 +926,7 @@ class Game implements GameStateType {
     moves(): number[] {
         if (this.isGameOver()) return [];
 
-        let moves = [];
+        const moves = [];
 
         for (let i = 0; i < BOARD_SIZE; i++) {
             if (!this.board[i] || (this.board[i] & 0b1) !== this.turn) continue;

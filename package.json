@@ -25,18 +25,21 @@
     "scripts": {
         "format:check": "prettier --check .",
         "format:fix": "prettier --write .",
-        "check": "npm run format:check",
+        "lint:check": "eslint src/",
+        "check": "npm run format:check && npm run lint:check",
         "fix": "npm run format:fix",
         "build": "tsc",
-        "test": "jest",
+        "test": "vitest run",
         "prepack": "npm run build"
     },
     "devDependencies": {
-        "@jest/globals": "^30.2.0",
-        "@types/jest": "^30.0.0",
-        "jest": "^30.2.0",
+        "@eslint/js": "^9.39.1",
+        "@types/mocha": "^10.0.10",
+        "eslint": "^9.39.1",
         "prettier": "^3.6.2",
-        "ts-jest": "^29.4.5",
-        "typescript": "^5.9.3"
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.46.3",
+        "vitest": "^4.0.6"
     }
 }

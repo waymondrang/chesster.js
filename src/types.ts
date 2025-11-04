@@ -1,4 +1,4 @@
-import type { WHITE, BLACK } from "./const";
+import type { WHITE, BLACK } from "./const.js";
 
 // https://stackoverflow.com/a/51365037
 type RecursivePartial<T> = {

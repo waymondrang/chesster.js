@@ -38,20 +38,20 @@ import {
     KING,
     WHITE_KING,
     BLACK_KING,
-} from "./const";
+} from "./const.js";
 
 ////////////
 // ENGINE //
 ////////////
 
-export { Game as Chesster } from "./game";
+export { Game as Chesster } from "./game.js";
 
 ///////////
 // TYPES //
 ///////////
 
-export type { GameStateType as ChessterState } from "./types";
-export type { PlayerType as Player } from "./types";
+export type { GameStateType as ChessterState } from "./types.js";
+export type { PlayerType as Player } from "./types.js";
 
 ///////////////
 // CONSTANTS //
@@ -75,7 +75,7 @@ export {
     // DEFAULT BOARD //
     ///////////////////
     DEFAULT_BOARD,
-} from "./const";
+} from "./const.js";
 
 ////////////
 // PIECES //
@@ -129,4 +129,4 @@ export const moveTypes = {
 // UTILITIES //
 ///////////////
 
-export { fenToBoard, fenToGameState } from "./util";
+export { fenToBoard, fenToGameState } from "./util.js";

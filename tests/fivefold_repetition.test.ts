@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "vitest";
 import { Chesster } from "../src/index";
 
 // todo: create fen string import tests

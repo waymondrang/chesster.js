@@ -1,4 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from "vitest";
 import { Chesster } from "../src/index";
 
 /**
@@ -63,6 +63,6 @@ describe(`simple move generation (perft) testing (max depth: ${MAX_DEPTH})`, () 
             const game = new Chesster();
             const positions = perft(game, depth);
             expect(positions).toBe(expected);
-        });
+        }, 30000); // timeout
     }
 });

@@ -13,8 +13,8 @@ import {
     WHITE_KING,
     WHITE,
     BLACK,
-} from "./const";
-import type { GameStateType, RecursivePartial, TurnType } from "./types";
+} from "./const.js";
+import type { GameStateType, RecursivePartial, TurnType } from "./types.js";
 
 // piece to string lookup table
 const PIECE_TO_STRING: Record<number, string> = {
