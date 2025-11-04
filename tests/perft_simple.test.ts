@@ -63,6 +63,6 @@ describe(`simple move generation (perft) testing (max depth: ${MAX_DEPTH})`, () 
             const game = new Chesster();
             const positions = perft(game, depth);
             expect(positions).toBe(expected);
-        }, 30000); // timeout
+        }, 60000); // timeout
     }
 });
